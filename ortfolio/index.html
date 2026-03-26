@@ -2,27 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Portfolio</title>
+  <title>Portfolio – Uzman</title>
   <link rel="stylesheet" href="styles.css">
-
-  <!-- Reddit Sans Font -->
   <link href="https://fonts.googleapis.com/css2?family=Reddit+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+  <!-- Cursor glow -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
   <!-- Navbar -->
-  <header class="navbar">
+  <header class="navbar" id="navbar">
     <div class="nav-container">
       <div class="nav-left">
         <a class="active">Home</a>
         <a>About</a>
         <a href="service.html">Service</a>
       </div>
-
       <div class="logo">
         <span class="circle">UI</span> PORTFOLIO
       </div>
-
       <div class="nav-right">
         <a>Resume</a>
         <a>Project</a>
@@ -34,36 +33,173 @@
   <!-- Hero Section -->
   <section class="hero">
 
-    <div class="hello">Hello!</div>
+    <div class="hello reveal" data-delay="0">Hello!</div>
 
-    <h1>
-      I’m Uzman,<br>
+    <h1 class="reveal" data-delay="100">
+      I'm Uzman,<br>
       <span>UI/UX Designer</span>
     </h1>
 
     <!-- Left Quote -->
-    <div class="quote">
-      “Uzman's Exceptional Design will help you to design wireframes as much as quick as possible”
+    <div class="quote reveal" data-delay="200">
+      "Uzman's Exceptional Design will help you to design wireframes as much as quick as possible"
     </div>
 
     <!-- Right Experience -->
-    <div class="experience">
+    <div class="experience reveal" data-delay="200">
       ★★★★★
       <p>2 Years<br>Experience</p>
     </div>
 
     <!-- Image -->
-    <div class="hero-img">
+    <div class="hero-img reveal" data-delay="300">
       <img src="uzman.png" alt="Uzman">
     </div>
 
     <!-- Buttons -->
-   <div class="button-wrapper">
-  <button class="portfolio">Portfolio ↗</button>
-  <button class="hire">Hire me</button>
-</div>
+    <div class="button-wrapper reveal" data-delay="400">
+      <button class="portfolio">Portfolio ↗</button>
+      <button class="hire">Hire me</button>
+    </div>
 
   </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-card reveal" data-delay="0">
+        <span class="stat-number" data-target="2">0</span><span class="stat-suffix">+</span>
+        <p>Years Experience</p>
+      </div>
+      <div class="stat-card reveal" data-delay="100">
+        <span class="stat-number" data-target="24">0</span><span class="stat-suffix">+</span>
+        <p>Projects Done</p>
+      </div>
+      <div class="stat-card reveal" data-delay="200">
+        <span class="stat-number" data-target="18">0</span><span class="stat-suffix">+</span>
+        <p>Happy Clients</p>
+      </div>
+      <div class="stat-card reveal" data-delay="300">
+        <span class="stat-number" data-target="5">0</span><span class="stat-suffix">★</span>
+        <p>Average Rating</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills-section">
+    <h2 class="section-title reveal" data-delay="0">What I Do</h2>
+    <div class="skills-grid">
+      <div class="skill-card reveal" data-delay="0">
+        <div class="skill-icon">✦</div>
+        <h3>UI Design</h3>
+        <p>Crafting pixel-perfect interfaces that feel intuitive and look stunning.</p>
+        <div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div>
+      </div>
+      <div class="skill-card reveal" data-delay="100">
+        <div class="skill-icon">◈</div>
+        <h3>UX Research</h3>
+        <p>Understanding users deeply to create experiences they love.</p>
+        <div class="skill-bar"><div class="skill-fill" data-width="80%"></div></div>
+      </div>
+      <div class="skill-card reveal" data-delay="200">
+        <div class="skill-icon">⬡</div>
+        <h3>Wireframing</h3>
+        <p>Fast, clear wireframes that communicate ideas instantly.</p>
+        <div class="skill-bar"><div class="skill-fill" data-width="95%"></div></div>
+      </div>
+      <div class="skill-card reveal" data-delay="300">
+        <div class="skill-icon">◎</div>
+        <h3>Prototyping</h3>
+        <p>Interactive prototypes that bring your product vision to life.</p>
+        <div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <span>UI Design</span><span class="dot">●</span>
+      <span>UX Research</span><span class="dot">●</span>
+      <span>Wireframing</span><span class="dot">●</span>
+      <span>Prototyping</span><span class="dot">●</span>
+      <span>Consulting</span><span class="dot">●</span>
+      <span>UI Design</span><span class="dot">●</span>
+      <span>UX Research</span><span class="dot">●</span>
+      <span>Wireframing</span><span class="dot">●</span>
+      <span>Prototyping</span><span class="dot">●</span>
+      <span>Consulting</span><span class="dot">●</span>
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-inner reveal" data-delay="0">
+      <h2>Ready to work together?</h2>
+      <p>Let's build something amazing.</p>
+      <a href="service.html" class="cta-btn">View Services ↗</a>
+    </div>
+  </section>
+
+  <script>
+    // --- Cursor glow ---
+    const glow = document.getElementById('cursorGlow');
+    document.addEventListener('mousemove', e => {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top = e.clientY + 'px';
+    });
+
+    // --- Navbar shrink on scroll ---
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // --- Scroll reveal ---
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const delay = entry.target.dataset.delay || 0;
+          setTimeout(() => entry.target.classList.add('visible'), parseInt(delay));
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(el => observer.observe(el));
+
+    // --- Count-up animation ---
+    const counters = document.querySelectorAll('.stat-number');
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.dataset.target);
+          let current = 0;
+          const step = target / 40;
+          const timer = setInterval(() => {
+            current += step;
+            if (current >= target) { el.textContent = target; clearInterval(timer); }
+            else el.textContent = Math.floor(current);
+          }, 40);
+          counterObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(el => counterObserver.observe(el));
+
+    // --- Skill bar animation ---
+    const skillFills = document.querySelectorAll('.skill-fill');
+    const skillObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.width = entry.target.dataset.width;
+          skillObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    skillFills.forEach(el => skillObserver.observe(el));
+  </script>
 
 </body>
 </html>
