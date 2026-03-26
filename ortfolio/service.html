@@ -2,107 +2,382 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Service Page</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Service Page – Uzman</title>
   <link href="https://fonts.googleapis.com/css2?family=Reddit+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* Full-screen background */
+    :root {
+      --green: #3f5f52;
+      --green-glow: rgba(63, 95, 82, 0.4);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
     body {
-      margin: 0;
-      padding: 0;
       font-family: 'Reddit Sans', sans-serif;
       background: url('BG.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
       overflow-x: hidden;
+      min-height: 100vh;
     }
 
-    /* Main container centered in page */
-    .service-container {
-      width: 1298px;
+    /* Dark overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 0;
+    }
+
+    /* ---- REVEAL ---- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ---- NAVBAR ---- */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 20px 0;
+      transition: padding 0.3s;
+    }
+
+    .navbar.scrolled {
+      padding: 10px 0;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-container {
+      width: min(1298px, 95vw);
+      height: 80px;
       margin: 0 auto;
-      padding: 100px 20px;
+      background: rgba(0,0,0,0.7);
+      border-radius: 50px;
+      border: 1.5px solid rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s;
+    }
+
+    .navbar.scrolled .nav-container { transform: scale(0.97); }
+
+    .nav-left, .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-container a {
+      width: 120px; height: 60px;
+      display: flex; align-items: center; justify-content: center;
+      color: #ccc; text-decoration: none;
+      font-size: 15px; font-weight: 500;
+      border-radius: 30px;
+      transition: background 0.3s, color 0.3s, transform 0.2s;
+    }
+
+    .nav-container a:hover { background: var(--green); color: #fff; transform: scale(1.05); }
+    .nav-container .active { background: var(--green); color: #fff; }
+
+    .logo {
+      color: #fff; font-weight: 900;
+      display: flex; align-items: center; gap: 8px;
+      letter-spacing: 2px;
+    }
+
+    .circle {
+      background: var(--green); color: #fff;
+      padding: 6px 10px; border-radius: 50%;
+      animation: spin 8s linear infinite;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* ---- HERO TITLE ---- */
+    .service-hero {
+      position: relative;
+      z-index: 1;
       text-align: center;
-      backdrop-filter: blur(10px); /* optional glass effect */
-      background: rgba(0,0,0,0.4); /* semi-transparent overlay */
-      border-radius: 20px;
+      padding: 100px 20px 60px;
     }
 
-    .service-container h1 {
-      font-size: 60px;
-      margin-bottom: 20px;
-      color: #fff;
+    .service-hero h1 {
+      font-size: clamp(40px, 7vw, 80px);
+      font-weight: 700;
+      margin-bottom: 16px;
+      animation: fadeDown 0.8s ease forwards;
     }
 
-    .service-container p {
-      font-size: 20px;
-      margin-bottom: 50px;
-      color: #ddd;
+    .service-hero p {
+      font-size: 18px; color: #ccc;
+      max-width: 600px; margin: 0 auto;
+      animation: fadeDown 0.8s 0.15s ease both;
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ---- CARDS ---- */
+    .cards-section {
+      position: relative; z-index: 1;
+      padding: 60px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .service-cards {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
     }
 
     .service-card {
-      flex: 1;
-      min-width: 250px;
-      padding: 30px;
-      border-radius: 15px;
-      background: rgba(255, 255, 255, 0.1); /* semi-transparent card */
-      color: #fff;
+      padding: 40px 30px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1.5px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(12px);
       font-size: 18px;
-      transition: 0.3s;
+      font-weight: 600;
+      cursor: default;
+      transition: transform 0.35s, background 0.35s, border-color 0.35s, box-shadow 0.35s;
     }
 
     .service-card:hover {
-      background: rgba(255, 255, 255, 0.2);
-      transform: translateY(-5px);
+      background: rgba(63, 95, 82, 0.25);
+      border-color: var(--green);
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(63,95,82,0.3);
     }
 
-    /* Scroll hint to go back */
+    .card-icon {
+      font-size: 36px;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .card-desc {
+      font-size: 14px;
+      color: #bbb;
+      font-weight: 400;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    /* ---- PROCESS ---- */
+    .process-section {
+      position: relative; z-index: 1;
+      padding: 80px 40px;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .process-section h2 {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 700;
+      margin-bottom: 50px;
+    }
+
+    .process-section h2::after {
+      content: '';
+      display: block;
+      width: 50px; height: 3px;
+      background: var(--green);
+      margin: 14px auto 0;
+      border-radius: 2px;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      text-align: left;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 24px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: background 0.3s, border-color 0.3s, transform 0.3s;
+    }
+
+    .step:hover {
+      background: rgba(63,95,82,0.2);
+      border-color: var(--green);
+      transform: translateX(8px);
+    }
+
+    .step-num {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--green);
+      min-width: 50px;
+      line-height: 1;
+    }
+
+    .step h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+    .step p { font-size: 14px; color: #bbb; line-height: 1.6; }
+
+    /* ---- SCROLL UP ---- */
     .scroll-up {
       position: fixed;
-      bottom: 30px;
-      left: 50%;
+      bottom: 30px; left: 50%;
       transform: translateX(-50%);
-      font-size: 18px;
-      color: #fff;
+      font-size: 16px; color: #fff;
       cursor: pointer;
-      background: rgba(63, 95, 82, 0.6);
-      padding: 10px 20px;
+      background: rgba(63, 95, 82, 0.75);
+      padding: 12px 24px;
       border-radius: 25px;
       animation: bounce 2s infinite;
       text-decoration: none;
+      z-index: 200;
+      font-weight: 600;
+      backdrop-filter: blur(6px);
+      transition: background 0.3s;
     }
+
+    .scroll-up:hover { background: var(--green); }
 
     @keyframes bounce {
       0%, 100% { transform: translateX(-50%) translateY(0); }
-      50% { transform: translateX(-50%) translateY(-10px); }
+      50% { transform: translateX(-50%) translateY(-8px); }
+    }
+
+    @media (max-width: 768px) {
+      .cards-section { padding: 40px 20px; }
     }
   </style>
 </head>
 <body>
 
-  <section class="service">
-    <div class="service-container">
-      <h1>My Services</h1>
-      <p>I provide UI/UX design, wireframing, prototyping, and consulting services for web and mobile projects.</p>
+  <!-- Navbar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-left">
+        <a href="index.html">Home</a>
+        <a>About</a>
+        <a class="active">Service</a>
+      </div>
+      <div class="logo">
+        <span class="circle">UI</span> PORTFOLIO
+      </div>
+      <div class="nav-right">
+        <a>Resume</a>
+        <a>Project</a>
+        <a>Contact</a>
+      </div>
+    </div>
+  </header>
 
-      <div class="service-cards">
-        <div class="service-card">Wireframing</div>
-        <div class="service-card">UI/UX Design</div>
-        <div class="service-card">Prototyping</div>
-        <div class="service-card">Consulting</div>
+  <!-- Hero -->
+  <section class="service-hero">
+    <h1>My Services</h1>
+    <p>I provide UI/UX design, wireframing, prototyping, and consulting services for web and mobile projects.</p>
+  </section>
+
+  <!-- Cards -->
+  <section class="cards-section">
+    <div class="service-cards">
+      <div class="service-card reveal" data-delay="0">
+        <span class="card-icon">✏️</span>
+        Wireframing
+        <p class="card-desc">Fast, clear wireframes that communicate ideas before a single pixel is designed.</p>
+      </div>
+      <div class="service-card reveal" data-delay="100">
+        <span class="card-icon">🎨</span>
+        UI/UX Design
+        <p class="card-desc">Pixel-perfect interfaces that feel intuitive, look stunning, and convert users.</p>
+      </div>
+      <div class="service-card reveal" data-delay="200">
+        <span class="card-icon">⚡</span>
+        Prototyping
+        <p class="card-desc">Interactive prototypes that bring your product vision to life before development.</p>
+      </div>
+      <div class="service-card reveal" data-delay="300">
+        <span class="card-icon">💡</span>
+        Consulting
+        <p class="card-desc">Design strategy, audits, and roadmapping to keep your product on the right path.</p>
       </div>
     </div>
   </section>
 
-  <!-- Scroll up button to return to home -->
-  <a href="index.html" class="scroll-up">⬆ Scroll Up to Home</a>
+  <!-- Process -->
+  <section class="process-section">
+    <h2 class="reveal" data-delay="0">My Process</h2>
+    <div class="steps">
+      <div class="step reveal" data-delay="0">
+        <span class="step-num">01</span>
+        <div>
+          <h3>Discovery</h3>
+          <p>Understanding your goals, users, and challenges through research and conversation.</p>
+        </div>
+      </div>
+      <div class="step reveal" data-delay="100">
+        <span class="step-num">02</span>
+        <div>
+          <h3>Wireframing</h3>
+          <p>Mapping out structure and flow before diving into visuals.</p>
+        </div>
+      </div>
+      <div class="step reveal" data-delay="200">
+        <span class="step-num">03</span>
+        <div>
+          <h3>Design</h3>
+          <p>Crafting high-fidelity designs that are both beautiful and functional.</p>
+        </div>
+      </div>
+      <div class="step reveal" data-delay="300">
+        <span class="step-num">04</span>
+        <div>
+          <h3>Handoff</h3>
+          <p>Clean, developer-ready assets and specs for a smooth build phase.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <a href="index.html" class="scroll-up">⬆ Back to Home</a>
+
+  <script>
+    // Navbar shrink
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const delay = entry.target.dataset.delay || 0;
+          setTimeout(() => entry.target.classList.add('visible'), parseInt(delay));
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
 
 </body>
 </html>
