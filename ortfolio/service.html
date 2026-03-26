@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Service Page</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Reddit+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Full-screen background */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Reddit Sans', sans-serif;
+      background: url('BG.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* Main container centered in page */
+    .service-container {
+      width: 1298px;
+      margin: 0 auto;
+      padding: 100px 20px;
+      text-align: center;
+      backdrop-filter: blur(10px); /* optional glass effect */
+      background: rgba(0,0,0,0.4); /* semi-transparent overlay */
+      border-radius: 20px;
+    }
+
+    .service-container h1 {
+      font-size: 60px;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .service-container p {
+      font-size: 20px;
+      margin-bottom: 50px;
+      color: #ddd;
+    }
+
+    .service-cards {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .service-card {
+      flex: 1;
+      min-width: 250px;
+      padding: 30px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.1); /* semi-transparent card */
+      color: #fff;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .service-card:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-5px);
+    }
+
+    /* Scroll hint to go back */
+    .scroll-up {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 18px;
+      color: #fff;
+      cursor: pointer;
+      background: rgba(63, 95, 82, 0.6);
+      padding: 10px 20px;
+      border-radius: 25px;
+      animation: bounce 2s infinite;
+      text-decoration: none;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="service">
+    <div class="service-container">
+      <h1>My Services</h1>
+      <p>I provide UI/UX design, wireframing, prototyping, and consulting services for web and mobile projects.</p>
+
+      <div class="service-cards">
+        <div class="service-card">Wireframing</div>
+        <div class="service-card">UI/UX Design</div>
+        <div class="service-card">Prototyping</div>
+        <div class="service-card">Consulting</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scroll up button to return to home -->
+  <a href="index.html" class="scroll-up">⬆ Scroll Up to Home</a>
+
+</body>
+</html>
