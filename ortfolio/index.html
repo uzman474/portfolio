@@ -208,70 +208,43 @@
 
       <div class="project-cards">
 
-        <div class="project-card reveal" data-delay="0">
+        <!-- Card 1: Poster Cover -->
+        <div class="project-card reveal" data-delay="0"
+             onclick="window.open('https://www.behance.net/gallery/227415845/Magazine-(Travel-Sri-Lanka)','_blank')"
+             style="cursor:pointer;">
           <div class="project-label">Poster Cover</div>
           <div class="project-preview poster-preview">
             <img src="uzman1.png" alt="Poster Cover preview" />
             <div class="project-overlay"></div>
           </div>
-          <button class="project-arrow">↗</button>
+          <button class="project-arrow"
+                  onclick="event.stopPropagation();window.open('https://www.behance.net/gallery/227415845/Magazine-(Travel-Sri-Lanka)','_blank')">↗</button>
         </div>
 
-        <div class="project-card reveal" data-delay="150">
+        <!-- Card 2: Website Design -->
+        <div class="project-card reveal" data-delay="150"
+             onclick="window.open('https://www.figma.com/design/uv7ljZhtmsdemfvhmHM2GZ/Untitled?node-id=0-1&p=f&t=aAOHiCzGSL1USb5L-0','_blank')"
+             style="cursor:pointer;">
           <div class="project-label">Website Design</div>
           <div class="project-preview poster-preview">
             <img src="web.png" alt="Website Design preview" />
             <div class="project-overlay"></div>
           </div>
-          <button class="project-arrow">↗</button>
+          <button class="project-arrow"
+                  onclick="event.stopPropagation();window.open('https://www.figma.com/design/uv7ljZhtmsdemfvhmHM2GZ/Untitled?node-id=0-1&p=f&t=aAOHiCzGSL1USb5L-0','_blank')">↗</button>
         </div>
 
+        <!-- Card 3: Landing Page — No Data -->
         <div class="project-card reveal" data-delay="300">
           <div class="project-label">Landing Page</div>
-          <div class="project-preview landing-preview">
-            <div class="mock-browser">
-              <div class="mock-bar">
-                <span class="mock-dot r"></span>
-                <span class="mock-dot y"></span>
-                <span class="mock-dot g"></span>
-                <div class="mock-url">landing.uzman.design</div>
-              </div>
-              <div class="mock-body landing-body">
-                <div class="landing-cols">
-                  <div class="landing-col">
-                    <div class="landing-field">Vaporfly – Size 7</div>
-                    <div class="landing-field">Headlamp</div>
-                    <div class="landing-badge">Now available</div>
-                    <div class="landing-field small">39 $/day · Burnaby</div>
-                    <div class="landing-field small">18 $/day · Vancouver</div>
-                  </div>
-                  <div class="landing-col">
-                    <div class="landing-field">Details</div>
-                    <div class="landing-field small gray">Eight years on from the release of the first edition…</div>
-                    <div class="landing-field">Select Dates</div>
-                  </div>
-                  <div class="landing-col">
-                    <div class="landing-field small">Name</div>
-                    <div class="landing-input">Ryro</div>
-                    <div class="landing-field small">Email</div>
-                    <div class="landing-input">username@mypear.ca</div>
-                    <div class="landing-field small">Address</div>
-                    <div class="landing-input small">1023 W 49th Ave, Vanc…</div>
-                  </div>
-                </div>
-                <div class="mock-nav" style="margin-top:10px;">
-                  <span class="mock-active">Home</span>
-                  <span>G</span>
-                  <span>Profile</span>
-                </div>
-                <div class="msg-bubble">
-                  <div class="msg-green">Hello, I would like to rent the product for one month…</div>
-                  <div class="msg-white">We bought this product so my sister could learn ping pong…</div>
-                </div>
-              </div>
+          <div class="project-preview no-data-preview">
+            <div class="no-data-content">
+              <div class="no-data-icon">🚧</div>
+              <p class="no-data-title">No Data Updated</p>
+              <p class="no-data-sub">Will be updated later</p>
             </div>
           </div>
-          <button class="project-arrow">↗</button>
+          <button class="project-arrow" disabled style="opacity:0.3;cursor:not-allowed;pointer-events:none;">↗</button>
         </div>
 
       </div>
@@ -371,7 +344,9 @@
     <div class="websites-carousel-wrapper reveal" data-delay="100">
       <div class="websites-grid">
 
-        <div class="website-card active-card">
+        <div class="website-card active-card"
+             onclick="window.open('https://www.behance.net/mhmduzman','_blank')"
+             style="cursor:pointer;">
           <div class="website-card-inner">
             <div class="website-mock-browser">
               <div class="website-mock-bar">
@@ -404,12 +379,14 @@
           </div>
         </div>
 
-        <div class="website-card">
+        <div class="website-card"
+             onclick="window.open('https://www.linkedin.com/in/mohamed-uzman-b6bb39204/?skipRedirect=true','_blank')"
+             style="cursor:pointer;">
           <div class="website-card-inner">
             <div class="website-mock-browser">
               <div class="website-mock-bar">
                 <span class="wm-dot r"></span><span class="wm-dot y"></span><span class="wm-dot g"></span>
-                <div class="wm-url">linkedin.com/in/uzman</div>
+                <div class="wm-url">linkedin.com/in/mohamed-uzman</div>
               </div>
               <div class="website-mock-body linkedin-body">
                 <div class="li-banner"></div>
@@ -455,14 +432,6 @@
       <button class="filter-tag">Cards</button>
     </div>
 
-    <!-- Featured Project -->
-    <div class="featured-project reveal" data-delay="200">
-      <div class="fp-title-row">
-        <h3>Gearify – Equipment Rental System</h3>
-        <button class="fp-arrow-btn">↗</button>
-      </div>
-      <p class="fp-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue interdum ligula a dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis orci elementum egestas lobortis.</p>
-    </div>
   </section>
 
   <!-- ===== TESTIMONIALS ===== -->
@@ -475,13 +444,11 @@
       </div>
 
       <div class="testi-cards-track reveal" data-delay="100">
-        <!-- Faded left card -->
         <div class="testi-card faded">
           <div class="quote-icon">❝</div>
           <p class="testi-text">a dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis orci elementum egestas lobortis.</p>
         </div>
 
-        <!-- Active center card -->
         <div class="testi-card testi-card-active">
           <div class="testi-profile-row">
             <div class="testi-avatar"></div>
@@ -494,7 +461,6 @@
           <p class="testi-text">consectetur adipiscing elit. Sed congue interdum ligula a dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis orci elementum egestas lobortis.</p>
         </div>
 
-        <!-- Faded right card -->
         <div class="testi-card faded">
           <div class="testi-profile-row">
             <div class="testi-avatar"></div>
@@ -533,9 +499,9 @@
       <h2>From my blog post</h2>
       <a href="#" class="see-all-btn dark">See All</a>
     </div>
- 
+
     <div class="blog-grid">
- 
+
       <div class="blog-card reveal" data-delay="0">
         <div class="blog-thumb">
           <img src="Frame 5141.png" alt="ReWear blog thumbnail" class="blog-thumb-img" />
@@ -552,7 +518,7 @@
         </div>
         <h3 class="blog-title">ReWear: The mobile app that connects the donors and ……</h3>
       </div>
- 
+
       <div class="blog-card reveal" data-delay="100">
         <div class="blog-thumb">
           <img src="Frame 5151.png" alt="Gearify blog thumbnail" class="blog-thumb-img" />
@@ -569,7 +535,7 @@
         </div>
         <h3 class="blog-title">Gearify: The Mobile app for renting equipments</h3>
       </div>
- 
+
       <div class="blog-card reveal" data-delay="200">
         <div class="blog-thumb">
           <img src="Frame 5150.png" alt="PetCare+ blog thumbnail" class="blog-thumb-img" />
@@ -603,7 +569,7 @@
         </div>
         <h3 class="blog-title">Semina: The app that will help to care plants…</h3>
       </div>
- 
+
     </div>
   </section>
 
@@ -650,8 +616,8 @@
           <li><a onclick="scrollToSection('home', this)">Home</a></li>
           <li><a onclick="scrollToSection('about', this)">About Us</a></li>
           <li><a onclick="scrollToSection('service', this)">Service</a></li>
-          <li><a href="#">Resume</a></li>
-          <li><a href="#">Project</a></li>
+          <li><a onclick="scrollToSection('resume', this)">Resume</a></li>
+          <li><a onclick="scrollToSection('websites', this)">Project</a></li>
         </ul>
       </div>
 
@@ -660,7 +626,7 @@
         <ul>
           <li><a href="tel:+16047357975">+1 604 735 7975</a></li>
           <li><a href="mailto:mohameduzman47413@gmail.com">mohameduzman47413@gmail.com</a></li>
-          <li><a href="https://behance.net/mhmduzman" target="_blank">behance.com/mhmduzman</a></li>
+          <li><a href="https://www.behance.net/mhmduzman" target="_blank">behance.net/mhmduzman</a></li>
         </ul>
       </div>
 
