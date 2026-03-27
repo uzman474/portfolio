@@ -11,60 +11,49 @@
   <!-- Cursor glow -->
   <div class="cursor-glow" id="cursorGlow"></div>
 
-  <!-- Navbar -->
+  <!-- ===== NAVBAR ===== -->
   <header class="navbar" id="navbar">
     <div class="nav-container">
       <div class="nav-left">
-        <a class="active">Home</a>
-        <a>About</a>
-        <a href="service.html">Service</a>
+        <a class="active" onclick="scrollToSection('home', this)">Home</a>
+        <a onclick="scrollToSection('about', this)">About</a>
+        <a onclick="scrollToSection('service', this)">Service</a>
       </div>
       <div class="logo">
         <span class="circle">UI</span> PORTFOLIO
       </div>
       <div class="nav-right">
         <a>Resume</a>
-        <a>Project</a>
-        <a>Contact</a>
+        <a onclick="scrollToSection('websites', this)">Project</a>
+        <a onclick="scrollToSection('contact', this)">Contact</a>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-
+  <!-- ===== HOME ===== -->
+  <section class="hero" id="home">
     <div class="hello reveal" data-delay="0">Hello!</div>
-
     <h1 class="reveal" data-delay="100">
       I'm Uzman,<br>
       <span>UI/UX Designer</span>
     </h1>
-
-    <!-- Left Quote -->
     <div class="quote reveal" data-delay="200">
       "Uzman's Exceptional Design will help you to design wireframes as much as quick as possible"
     </div>
-
-    <!-- Right Experience -->
     <div class="experience reveal" data-delay="200">
       ★★★★★
       <p>2 Years<br>Experience</p>
     </div>
-
-    <!-- Image -->
     <div class="hero-img reveal" data-delay="300">
       <img src="uzman.png" alt="Uzman">
     </div>
-
-    <!-- Buttons -->
     <div class="button-wrapper reveal" data-delay="400">
       <button class="portfolio">Portfolio ↗</button>
       <button class="hire">Hire me</button>
     </div>
-
   </section>
 
-  <!-- Stats Section -->
+  <!-- ===== STATS ===== -->
   <section class="stats-section">
     <div class="stats-grid">
       <div class="stat-card reveal" data-delay="0">
@@ -86,7 +75,7 @@
     </div>
   </section>
 
-  <!-- Skills Section -->
+  <!-- ===== SKILLS ===== -->
   <section class="skills-section">
     <h2 class="section-title reveal" data-delay="0">What I Do</h2>
     <div class="skills-grid">
@@ -117,7 +106,7 @@
     </div>
   </section>
 
-  <!-- Marquee -->
+  <!-- ===== MARQUEE ===== -->
   <div class="marquee-section">
     <div class="marquee-track">
       <span>UI Design</span><span class="dot">●</span>
@@ -133,14 +122,551 @@
     </div>
   </div>
 
-  <!-- CTA Section -->
-  <section class="cta-section">
-    <div class="cta-inner reveal" data-delay="0">
-      <h2>Ready to work together?</h2>
-      <p>Let's build something amazing.</p>
-      <a href="service.html" class="cta-btn">View Services ↗</a>
+  <!-- ===== ABOUT ===== -->
+  <section class="experience-section" id="about">
+    <h2 class="exp-title reveal" data-delay="0">My <span>Work Experience</span></h2>
+    <div class="timeline">
+
+      <div class="timeline-item reveal" data-delay="0">
+        <div class="tl-left">
+          <div class="tl-company">Virtusa Pvt Ltd, Colombo</div>
+          <div class="tl-date">Mar 2022 – July 2023</div>
+        </div>
+        <div class="tl-spine">
+          <div class="tl-dot filled"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-right">
+          <div class="tl-role">Associate Engineer – Java</div>
+          <p class="tl-desc">I was working there as a Back-end Developer in Java for nearly 2 years. I have completed INNOVEO (Business Architect) and Ushur certifications. At the same time working in Java SpringBoot.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal" data-delay="150">
+        <div class="tl-left">
+          <div class="tl-company">Freelance, Remote</div>
+          <div class="tl-date">Aug 2023 – Present</div>
+        </div>
+        <div class="tl-spine">
+          <div class="tl-dot empty"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-right">
+          <div class="tl-role">UI/UX Designer</div>
+          <p class="tl-desc">Designing intuitive and visually stunning interfaces for web and mobile clients. Specializing in Figma, wireframing, prototyping, and front-end implementation with HTML, CSS & JavaScript.</p>
+        </div>
+      </div>
+
     </div>
   </section>
+
+  <!-- ===== WHY HIRE ME ===== -->
+  <section class="hire-section">
+    <div class="hire-inner reveal" data-delay="0">
+      <div class="hire-img">
+        <img src="uzman.png" alt="Uzman" />
+      </div>
+      <div class="hire-content">
+        <h2>Why <span>Hire me?</span></h2>
+        <p>What makes me a strong fit for your team is my balanced background in both design thinking and development. I'm currently pursuing a Post-Baccalaureate Diploma in Web and Design Development, where I'm honing both my visual design skills and technical capabilities. I have hands-on experience with tools like Figma and Adobe XD, as well as front-end technologies like HTML, CSS, and a bit of JavaScript.</p>
+        <div class="hire-stats">
+          <div>
+            <div class="hire-stat-num">2+</div>
+            <div class="hire-stat-label">UI/UX Projects Completed</div>
+          </div>
+          <div>
+            <div class="hire-stat-num">6+</div>
+            <div class="hire-stat-label">Development Projects Completed</div>
+          </div>
+        </div>
+        <a href="mailto:mohameduzman47413@gmail.com" class="hire-btn">Hire me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICE ===== -->
+  <section id="service" class="service-wrapper">
+
+    <div class="service-hero">
+      <h1 class="reveal" data-delay="0">My <span>Services</span></h1>
+      <p class="reveal" data-delay="100">I have been working with Behance for the last couple of months. Here are some of my projects that I have completed.</p>
+    </div>
+
+    <div class="showcase-section">
+      <div class="showcase-header reveal" data-delay="0">
+        <div class="showcase-title">
+          <span class="word-my">My</span>
+          <span class="word-services"> Projects</span>
+        </div>
+        <p class="showcase-desc">A selection of real-world work across poster design, web design, and landing pages.</p>
+      </div>
+
+      <div class="project-cards">
+
+        <div class="project-card reveal" data-delay="0">
+          <div class="project-label">Poster Cover</div>
+          <div class="project-preview poster-preview">
+            <img src="uzman1.png" alt="Poster Cover preview" />
+            <div class="project-overlay"></div>
+          </div>
+          <button class="project-arrow">↗</button>
+        </div>
+
+        <div class="project-card reveal" data-delay="150">
+          <div class="project-label">Website Design</div>
+          <div class="project-preview poster-preview">
+            <img src="web.png" alt="Website Design preview" />
+            <div class="project-overlay"></div>
+          </div>
+          <button class="project-arrow">↗</button>
+        </div>
+
+        <div class="project-card reveal" data-delay="300">
+          <div class="project-label">Landing Page</div>
+          <div class="project-preview landing-preview">
+            <div class="mock-browser">
+              <div class="mock-bar">
+                <span class="mock-dot r"></span>
+                <span class="mock-dot y"></span>
+                <span class="mock-dot g"></span>
+                <div class="mock-url">landing.uzman.design</div>
+              </div>
+              <div class="mock-body landing-body">
+                <div class="landing-cols">
+                  <div class="landing-col">
+                    <div class="landing-field">Vaporfly – Size 7</div>
+                    <div class="landing-field">Headlamp</div>
+                    <div class="landing-badge">Now available</div>
+                    <div class="landing-field small">39 $/day · Burnaby</div>
+                    <div class="landing-field small">18 $/day · Vancouver</div>
+                  </div>
+                  <div class="landing-col">
+                    <div class="landing-field">Details</div>
+                    <div class="landing-field small gray">Eight years on from the release of the first edition…</div>
+                    <div class="landing-field">Select Dates</div>
+                  </div>
+                  <div class="landing-col">
+                    <div class="landing-field small">Name</div>
+                    <div class="landing-input">Ryro</div>
+                    <div class="landing-field small">Email</div>
+                    <div class="landing-input">username@mypear.ca</div>
+                    <div class="landing-field small">Address</div>
+                    <div class="landing-input small">1023 W 49th Ave, Vanc…</div>
+                  </div>
+                </div>
+                <div class="mock-nav" style="margin-top:10px;">
+                  <span class="mock-active">Home</span>
+                  <span>G</span>
+                  <span>Profile</span>
+                </div>
+                <div class="msg-bubble">
+                  <div class="msg-green">Hello, I would like to rent the product for one month…</div>
+                  <div class="msg-white">We bought this product so my sister could learn ping pong…</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="project-arrow">↗</button>
+        </div>
+
+      </div>
+
+      <div class="carousel-dots">
+        <span class="cdot active"></span>
+        <span class="cdot"></span>
+        <span class="cdot"></span>
+        <span class="cdot"></span>
+      </div>
+    </div>
+
+    <div class="cards-section">
+      <div class="service-cards">
+        <div class="service-card reveal" data-delay="0">
+          <span class="card-icon">✏️</span>
+          Wireframing
+          <p class="card-desc">Fast, clear wireframes that communicate ideas before a single pixel is designed.</p>
+        </div>
+        <div class="service-card reveal" data-delay="100">
+          <span class="card-icon">🎨</span>
+          UI/UX Design
+          <p class="card-desc">Pixel-perfect interfaces that feel intuitive, look stunning, and convert users.</p>
+        </div>
+        <div class="service-card reveal" data-delay="200">
+          <span class="card-icon">⚡</span>
+          Prototyping
+          <p class="card-desc">Interactive prototypes that bring your product vision to life before development.</p>
+        </div>
+        <div class="service-card reveal" data-delay="300">
+          <span class="card-icon">💡</span>
+          Consulting
+          <p class="card-desc">Design strategy, audits, and roadmapping to keep your product on the right path.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="process-section">
+      <h2 class="reveal" data-delay="0">My Process</h2>
+      <div class="steps">
+        <div class="step reveal" data-delay="0">
+          <span class="step-num">01</span>
+          <div>
+            <h3>Discovery</h3>
+            <p>Understanding your goals, users, and challenges through research and conversation.</p>
+          </div>
+        </div>
+        <div class="step reveal" data-delay="100">
+          <span class="step-num">02</span>
+          <div>
+            <h3>Wireframing</h3>
+            <p>Mapping out structure and flow before diving into visuals.</p>
+          </div>
+        </div>
+        <div class="step reveal" data-delay="200">
+          <span class="step-num">03</span>
+          <div>
+            <h3>Design</h3>
+            <p>Crafting high-fidelity designs that are both beautiful and functional.</p>
+          </div>
+        </div>
+        <div class="step reveal" data-delay="300">
+          <span class="step-num">04</span>
+          <div>
+            <h3>Handoff</h3>
+            <p>Clean, developer-ready assets and specs for a smooth build phase.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===== WEBSITES SECTION ===== -->
+  <section class="websites-section" id="websites">
+    <div class="websites-header reveal" data-delay="0">
+      <h2>Lets have a look at my <span>Websites</span></h2>
+      <a href="#" class="see-all-btn">See All</a>
+    </div>
+
+    <div class="websites-carousel-wrapper reveal" data-delay="100">
+      <div class="websites-grid">
+
+        <div class="website-card active-card">
+          <div class="website-card-inner">
+            <div class="website-mock-browser">
+              <div class="website-mock-bar">
+                <span class="wm-dot r"></span><span class="wm-dot y"></span><span class="wm-dot g"></span>
+                <div class="wm-url">behance.net/mhmduzman</div>
+              </div>
+              <div class="website-mock-body behance-body">
+                <div class="beh-sidebar">
+                  <div class="beh-avatar"></div>
+                  <div class="beh-name-line"></div>
+                  <div class="beh-stat-row"><span></span><span></span></div>
+                  <div class="beh-links"><span></span><span></span><span></span></div>
+                </div>
+                <div class="beh-main">
+                  <div class="beh-hero-img"></div>
+                  <div class="beh-grid">
+                    <div class="beh-proj"></div>
+                    <div class="beh-proj"></div>
+                    <div class="beh-proj"></div>
+                    <div class="beh-proj"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="website-card-label">
+            <span class="wc-platform-icon behance-icon">Be</span>
+            <span class="wc-platform-name"><strong>Behance</strong></span>
+            <span class="wc-visit">↗</span>
+          </div>
+        </div>
+
+        <div class="website-card">
+          <div class="website-card-inner">
+            <div class="website-mock-browser">
+              <div class="website-mock-bar">
+                <span class="wm-dot r"></span><span class="wm-dot y"></span><span class="wm-dot g"></span>
+                <div class="wm-url">linkedin.com/in/uzman</div>
+              </div>
+              <div class="website-mock-body linkedin-body">
+                <div class="li-banner"></div>
+                <div class="li-profile-row">
+                  <div class="li-avatar"></div>
+                  <div class="li-info">
+                    <div class="li-name-line"></div>
+                    <div class="li-sub-line"></div>
+                  </div>
+                  <div class="li-connect-btn"></div>
+                </div>
+                <div class="li-sections">
+                  <div class="li-section-block"></div>
+                  <div class="li-section-block short"></div>
+                  <div class="li-section-block"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="website-card-label">
+            <span class="wc-platform-icon linkedin-icon">in</span>
+            <span class="wc-platform-name"><strong>LinkedIn</strong></span>
+            <span class="wc-visit">↗</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="websites-carousel-dots">
+        <span class="wcdot active"></span>
+        <span class="wcdot"></span>
+        <span class="wcdot"></span>
+        <span class="wcdot"></span>
+      </div>
+    </div>
+
+    <!-- Filter Tags -->
+    <div class="filter-tags reveal" data-delay="150">
+      <button class="filter-tag active">Landing Page</button>
+      <button class="filter-tag">Product Design</button>
+      <button class="filter-tag">Animation</button>
+      <button class="filter-tag">Glassmorphism</button>
+      <button class="filter-tag">Cards</button>
+    </div>
+
+    <!-- Featured Project -->
+    <div class="featured-project reveal" data-delay="200">
+      <div class="fp-title-row">
+        <h3>Gearify – Equipment Rental System</h3>
+        <button class="fp-arrow-btn">↗</button>
+      </div>
+      <p class="fp-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue interdum ligula a dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis orci elementum egestas lobortis.</p>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials-section">
+    <div class="testimonials-bg">
+      <div class="testi-header reveal" data-delay="0">
+        <span class="testi-sparkle testi-sparkle-left">✺</span>
+        <h2>Testimonials That<br><span>Speak to My Results</span></h2>
+        <span class="testi-sparkle testi-sparkle-right">✦</span>
+      </div>
+
+      <div class="testi-cards-track reveal" data-delay="100">
+        <!-- Faded left card -->
+        <div class="testi-card faded">
+          <div class="quote-icon">❝</div>
+          <p class="testi-text">a dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis orci elementum egestas lobortis.</p>
+        </div>
+
+        <!-- Active center card -->
+        <div class="testi-card testi-card-active">
+          <div class="testi-profile-row">
+            <div class="testi-avatar"></div>
+            <div class="testi-profile-info">
+              <div class="testi-name">Uzman Inayathullah</div>
+              <div class="testi-role">UI Ux Designer</div>
+            </div>
+          </div>
+          <div class="testi-stars">★★★★★ <span class="testi-rating">5.0</span></div>
+          <p class="testi-text">consectetur adipiscing elit. Sed congue interdum ligula a dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis orci elementum egestas lobortis.</p>
+        </div>
+
+        <!-- Faded right card -->
+        <div class="testi-card faded">
+          <div class="testi-profile-row">
+            <div class="testi-avatar"></div>
+            <div class="testi-profile-info">
+              <div class="testi-name">Uzman Inayathullah</div>
+              <div class="testi-role">UI Ux Designer</div>
+            </div>
+          </div>
+          <div class="testi-stars">★★★★<span style="color:#555">★</span> <span class="testi-rating">4.8</span></div>
+          <p class="testi-text">consectetur adipiscing elit. Sed congue interdum ligula a dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ca...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-section reveal" data-delay="0">
+    <h2>Have an Awsome Project<br>Idea? <span>Let's Discuss</span></h2>
+    <div class="cta-form">
+      <div class="cta-input-wrapper">
+        <span class="cta-email-icon">✉</span>
+        <input type="email" placeholder="Enter Email Address" class="cta-input" />
+      </div>
+      <button class="cta-send-btn">Send</button>
+    </div>
+    <div class="cta-badges">
+      <span class="cta-badge">⭐ 4.9/5 Average Ratings</span>
+      <span class="cta-badge">🏆 0 Winning Awards</span>
+      <span class="cta-badge">✅ Certified UI/UX Designer</span>
+    </div>
+  </section>
+
+  <!-- ===== BLOG ===== -->
+  <section class="blog-section" id="blog">
+    <div class="blog-header reveal" data-delay="0">
+      <h2>From my blog post</h2>
+      <a href="#" class="see-all-btn dark">See All</a>
+    </div>
+ 
+    <div class="blog-grid">
+ 
+      <div class="blog-card reveal" data-delay="0">
+        <div class="blog-thumb">
+          <img src="Frame 5141.png" alt="ReWear blog thumbnail" class="blog-thumb-img" />
+          <button class="blog-arrow-btn">↗</button>
+        </div>
+        <div class="blog-meta">
+          <span class="blog-tag">UI/ UX Design</span>
+        </div>
+        <div class="blog-byline">
+          <span class="blog-dot-green"></span>
+          <span class="blog-author">Uzman</span>
+          <span class="blog-sep">•</span>
+          <span class="blog-date">10 Dec, 2024</span>
+        </div>
+        <h3 class="blog-title">ReWear: The mobile app that connects the donors and ……</h3>
+      </div>
+ 
+      <div class="blog-card reveal" data-delay="100">
+        <div class="blog-thumb">
+          <img src="Frame 5151.png" alt="Gearify blog thumbnail" class="blog-thumb-img" />
+          <button class="blog-arrow-btn">↗</button>
+        </div>
+        <div class="blog-meta">
+          <span class="blog-tag">UI/ UX Design</span>
+        </div>
+        <div class="blog-byline">
+          <span class="blog-dot-green"></span>
+          <span class="blog-author">Uzman</span>
+          <span class="blog-sep">•</span>
+          <span class="blog-date">29 Apr, 2024</span>
+        </div>
+        <h3 class="blog-title">Gearify: The Mobile app for renting equipments</h3>
+      </div>
+ 
+      <div class="blog-card reveal" data-delay="200">
+        <div class="blog-thumb">
+          <img src="Frame 5150.png" alt="PetCare+ blog thumbnail" class="blog-thumb-img" />
+          <button class="blog-arrow-btn">↗</button>
+        </div>
+        <div class="blog-meta">
+          <span class="blog-tag">UI/ UX Design</span>
+        </div>
+        <div class="blog-byline">
+          <span class="blog-dot-green"></span>
+          <span class="blog-author">Uzman</span>
+          <span class="blog-sep">•</span>
+          <span class="blog-date">07 Dec, 2025</span>
+        </div>
+        <h3 class="blog-title">PetCare+: The Responsive web to care about the pets…</h3>
+      </div>
+
+      <div class="blog-card reveal" data-delay="300">
+        <div class="blog-thumb">
+          <img src="Frame 5152.png" alt="Semina blog thumbnail" class="blog-thumb-img" />
+          <button class="blog-arrow-btn">↗</button>
+        </div>
+        <div class="blog-meta">
+          <span class="blog-tag">UI/ UX Design</span>
+        </div>
+        <div class="blog-byline">
+          <span class="blog-dot-green"></span>
+          <span class="blog-author">Uzman</span>
+          <span class="blog-sep">•</span>
+          <span class="blog-date">10 Apr, 2026</span>
+        </div>
+        <h3 class="blog-title">Semina: The app that will help to care plants…</h3>
+      </div>
+ 
+    </div>
+  </section>
+
+  <!-- ===== CONTACT / FOOTER ===== -->
+  <footer id="contact" class="footer-section">
+
+    <div class="footer-top reveal" data-delay="0">
+      <h2 class="footer-connect">Lets Connect there</h2>
+      <a href="mailto:mohameduzman47413@gmail.com" class="footer-hireme">Hire me ↗</a>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-mid reveal" data-delay="100">
+
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="footer-logo-icon">UI</span>
+          <span class="footer-logo-text">PORTFOLIO</span>
+        </div>
+        <p class="footer-tagline">Whether it's a new brand or a redesign, I'm here to deliver high-quality freelance design that makes an impact.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-icon" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-nav-col">
+        <h4 class="footer-col-title">Navigation</h4>
+        <ul>
+          <li><a onclick="scrollToSection('home', this)">Home</a></li>
+          <li><a onclick="scrollToSection('about', this)">About Us</a></li>
+          <li><a onclick="scrollToSection('service', this)">Service</a></li>
+          <li><a href="#">Resume</a></li>
+          <li><a href="#">Project</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact-col">
+        <h4 class="footer-col-title">Contact</h4>
+        <ul>
+          <li><a href="tel:+16047357975">+1 604 735 7975</a></li>
+          <li><a href="mailto:mohameduzman47413@gmail.com">mohameduzman47413@gmail.com</a></li>
+          <li><a href="https://behance.net/mhmduzman" target="_blank">behance.com/mhmduzman</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-newsletter-col">
+        <h4 class="footer-col-title">Get the latest information</h4>
+        <div class="footer-email-form">
+          <input type="email" placeholder="Email Address" class="footer-email-input" />
+          <button class="footer-email-btn" aria-label="Submit">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-bottom reveal" data-delay="200">
+      <p class="footer-copy">Copyright&copy; 2025 UzmanUI. All Rights Reserved.</p>
+      <div class="footer-legal">
+        <a href="#">User Terms &amp; Conditions</a>
+        <span>|</span>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+
+  </footer>
 
   <script>
     // --- Cursor glow ---
@@ -150,6 +676,14 @@
       glow.style.top = e.clientY + 'px';
     });
 
+    // --- Smooth scroll + active nav ---
+    function scrollToSection(id, el) {
+      document.querySelectorAll('.nav-container a').forEach(a => a.classList.remove('active'));
+      if (el && el.classList) el.classList.add('active');
+      const target = document.getElementById(id);
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    }
+
     // --- Navbar shrink on scroll ---
     window.addEventListener('scroll', () => {
       document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
@@ -157,16 +691,16 @@
 
     // --- Scroll reveal ---
     const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
+    const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const delay = entry.target.dataset.delay || 0;
           setTimeout(() => entry.target.classList.add('visible'), parseInt(delay));
-          observer.unobserve(entry.target);
+          revealObserver.unobserve(entry.target);
         }
       });
     }, { threshold: 0.15 });
-    reveals.forEach(el => observer.observe(el));
+    reveals.forEach(el => revealObserver.observe(el));
 
     // --- Count-up animation ---
     const counters = document.querySelectorAll('.stat-number');
@@ -179,8 +713,12 @@
           const step = target / 40;
           const timer = setInterval(() => {
             current += step;
-            if (current >= target) { el.textContent = target; clearInterval(timer); }
-            else el.textContent = Math.floor(current);
+            if (current >= target) {
+              el.textContent = target;
+              clearInterval(timer);
+            } else {
+              el.textContent = Math.floor(current);
+            }
           }, 40);
           counterObserver.unobserve(el);
         }
@@ -199,6 +737,14 @@
       });
     }, { threshold: 0.5 });
     skillFills.forEach(el => skillObserver.observe(el));
+
+    // --- Filter tags ---
+    document.querySelectorAll('.filter-tag').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-tag').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
   </script>
 
 </body>
